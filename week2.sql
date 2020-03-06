@@ -1,7 +1,7 @@
 
 show databases;
-create database Abhaya;
-use Abhaya;
+create database ABHISHIKAT;
+useABHISHIKAT;
 create table Branch(branchname varchar(30),branchcity varchar(30),assets real,PRIMARY KEY(branchname));
 create table BankAccount(accno integer,branchname varchar(30),blanace real,primary key(accno),foreign key(branchname) references Branch(branchname));
 drop table BankAccount;
