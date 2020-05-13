@@ -42,24 +42,35 @@ select * from Loan;
 select * from BankAccount;
 select * from bankcustomer;
 select * from depositer;
+																	  
+				    
+create table Borrower(
+customer_name varchar(30),
+loan_number int,
+primary key(customer_name,loan_number),
+foreign key(customer_name) references BankCustomer(customer_name),
+foreign key(loan_number) references Loan(loan_number));
+
+insert into Borrower values('Avinash',1),('Dinesh',2),('Nikhil',3),('Ravi',4),('Avinash',5);																	  
+																	  
 
 TRUNCATE TABLE Loan;
 DELETE FROM BankAccount WHERE branchname='SBi_shivajiRoad';
 
-insert into bankcustomer values("Avinash","Bull_Temple_Road","Bangalore");
- insert into bankcustomer values("Dinesh","Bannergatta","Bangalore");
- insert into bankcustomer values("Mohan","National_clg_Road","Bangalore");
- insert into bankcustomer values("Nikil","Akbar_road","Delhi");
- insert into bankcustomer values("Ravi","prithviraj_Road","Delhi");
+insert into bankcustomer values('Avinash','Bull_Temple_Road','Bangalore');
+ insert into bankcustomer values('Dinesh','Bannergatta','Bangalore');
+ insert into bankcustomer values('Mohan','National_clg_Road','Bangalore');
+ insert into bankcustomer values('Nikil','Akbar_road','Delhi');
+ insert into bankcustomer values('Ravi','prithviraj_Road','Delhi');
  
- insert into depositer values("Avinash",1);
- insert into depositer  values("Dinesh",2);
- insert into depositer  values("Nikil",4);
- insert into depositer  values("Ravi",5);
- insert into depositer  values("Avinash",8);
- insert into depositer  values("Nikil",9);
- insert into depositer  values("Dinesh",10);
- insert into depositer   values("Nikil",11);
+ insert into depositer values('Avinash',1);
+ insert into depositer  values('Dinesh',2);
+ insert into depositer  values('Nikil',4);
+ insert into depositer  values('Ravi',5);
+ insert into depositer  values('Avinash',8);
+ insert into depositer  values('Nikil',9);
+ insert into depositer  values('Dinesh',10);
+ insert into depositer   values('Nikil',11);
  
  select C.customername from BankCustomer C 
  where exists ( 
